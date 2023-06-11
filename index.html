@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>[VOL] Clan - Home</title>
+    <style>
+        /* CSS Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #131920;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            padding-bottom: 250px; /* Adjusted padding to accommodate the bottom section */
+        }
+
+        .header {
+            text-align: center;
+            background: #0b192f;
+            color: #fff;
+            padding: 40px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .logo img {
+            width: 50px;
+            margin-right: 10px;
+        }
+
+        .hero {
+            margin-top: 50px;
+        }
+
+        h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #ffab00; /* Change the color to your desired color */
+        }
+
+        p {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #ffab00; /* Change the color to your desired color */
+        }
+
+        .reasons {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            margin-top: 20px;
+        }
+
+        .reason {
+            flex: 1;
+            margin: 0 10px;
+            padding: 10px;
+            background-color: rgba(11, 25, 47, 0.7);
+            border-radius: 4px;
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .reason:hover {
+            transform: translateY(-10px);
+        }
+
+        .reason img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        .reason h3 {
+            font-size: 30px;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .reason p {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #0b192f;
+            color: #fff;
+            z-index: 999;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        /* Animations */
+        .animated {
+            animation-duration: 1s;
+            animation-fill-mode: both;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Taskbar Styles */
+        .taskbar {
+            background-color: #0e2346; /* Updated color for the taskbar background */
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            height: 50px;
+            z-index: 999;
+            overflow-x: auto;
+        }
+
+        .taskbar-item {
+            margin: 0 10px;
+            padding: 10px;
+            border-radius: 4px;
+            background-color: #1e4c97;
+            transition: transform 0.3s;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .taskbar-item img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+
+        .taskbar-item:hover {
+            transform: translateY(-5px);
+            background-color: #ff9900;
+        }
+
+        .taskbar-item span {
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* Button Styles */
+        .cta-button {
+            display: inline-block;
+            background-color: #ff9900; /* Change the color to your desired color */
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #e67e00; /* Change the color to your desired hover color */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header animated">
+            <div class="logo">
+                <img src="https://i.pinimg.com/564x/19/cd/64/19cd64b2d8728847b229ad933c88b83e.jpg" alt="Vol Logo">
+                <h1>[VOL] Clan</h1>
+            </div>
+            <p>Welcome to our Rust clan! Join us and dominate the battlefield with us.</p>
+            <a href="https://discord.gg/eVyvHUk5Dy" class="cta-button">Join Now</a>
+        </header>
+        <section class="hero animated">
+            <h2>About Us</h2>
+            <p>[VOL] Clan is a very big clan filled with experienced players from every region.
+                It was made on the 23rd of May and continues to thrive in the clan rust
+                community one of the top 10 and best clans out there that isn't hard to join.</p>
+        </section>
+        <section class="reasons animated">
+            <div class="reason">
+                <img src="https://culturedvultures.com/wp-content/uploads/2021/03/Rust-poker-tables.jpeg"
+                    alt="Reason 1">
+                <h3>Supportive And Big Community</h3>
+                <p>We have an experienced and long background meaning we have better knowledge and experience in
+                    anything a rust clan does.</p>
+            </div>
+            <div class="reason">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBs6tzr2newSt7YaMXj9oKS_s_fzVLqqYcZA&usqp=CAU"
+                    alt="Reason 2">
+                <h3>Competitive Wipes</h3>
+                <p>Our attitude towards any wipe is sheer victory and precision no matter the situation.</p>
+            </div>
+            <div class="reason">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8TVKPxcN1mhLCi-5VtInm_RdO0lM7s4hp0w&usqp=CAU"
+                    alt="Reason 3">
+                <h3>Active And Skilled Members</h3>
+                <p>We have members from every region in the world active 24/7 so no matter where you're from there is
+                    always a member available to team up with or ask questions.</p>
+            </div>
+        </section>
+    </div>
+    <footer class="footer animated">
+        <div class="taskbar">
+            <a href="index.html" class="taskbar-item">
+                <span>Home</span>
+            </a>
+            <a href="support.html" class="taskbar-item">
+                <span>Support</span>
+            </a>
+        </div>
+    </footer>
+</body>
+
+</html>

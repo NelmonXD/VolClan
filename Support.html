@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>[VOL] Clan - Support</title>
+    <style>
+        /* CSS Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #131920;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            background: #0b192f;
+            color: #fff;
+            padding: 40px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .logo img {
+            width: 50px;
+            margin-right: 10px;
+        }
+
+        .hero {
+            margin-top: 50px;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #3a5068;
+            padding: 30px;
+            border-radius: 4px;
+        }
+
+        .form label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .form input,
+        .form textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 18px;
+            border-radius: 4px;
+            border: none;
+            margin-bottom: 20px;
+        }
+
+        .form button {
+            padding: 10px 20px;
+            background-color: #ffab00;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .form button:hover {
+            background-color: #ff9900;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #0b192f;
+            color: #fff;
+        }
+
+        /* Animations */
+        .animated {
+            animation-duration: 1s;
+            animation-fill-mode: both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Taskbar Styles */
+        .taskbar {
+            background-color: #0e2346;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            height: 50px;
+            z-index: 999;
+            overflow-x: auto;
+        }
+
+        .taskbar-item {
+            margin: 0 10px;
+            padding: 10px;
+            border-radius: 4px;
+            background-color: #1e4c97;
+            transition: transform 0.3s;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .taskbar-item img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+
+        .taskbar-item:hover {
+            transform: translateY(-5px);
+            background-color: #ff9900;
+        }
+
+        .taskbar-item span {
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* Popup Styles */
+        .popup {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 18px;
+            z-index: 9999;
+            animation: fadeInOut 2s ease-in-out;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .popup.success {
+            background-color: #43a047;
+        }
+
+        .popup.error {
+            background-color: #d32f2f;
+        }
+
+        @keyframes fadeInOut {
+            0% {
+                opacity: 0;
+                transform: translateY(100%);
+            }
+
+            10%,
+            90% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(100%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header animated fadeInUp">
+            <div class="logo">
+                <img src="https://i.pinimg.com/564x/19/cd/64/19cd64b2d8728847b229ad933c88b83e.jpg" alt="VOL Clan Logo">
+                <h1>[VOL] Clan</h1>
+            </div>
+        </header>
+
+        <div class="hero">
+            <p>Fill out the form below for any assistance or questions you have. We will receive it straight away.</p>
+            <div class="form animated fadeInUp">
+                <form id="support-form">
+                    <label for="username">Discord Username and Tag:</label>
+                    <input type="text" id="username" name="username" required>
+        
+                    <label for="role">Role in Clan:</label>
+                    <input type="text" id="role" name="role" required>
+        
+                    <label for="issue">Issue/Question:</label>
+                    <textarea id="issue" name="issue" rows="4" required></textarea>
+        
+                    <button type="submit">Submit</button>
+                    <p>Don't abuse this. This is still in beta but works.</p>
+                </form>
+            </div>
+        </div>        
+
+        <footer class="footer">
+            &copy; 2023 [VOL] Clan. All rights reserved.
+        </footer>
+    </div>
+
+    <div class="taskbar">
+        <a href="index.html" class="taskbar-item">
+            <span>Home</span>
+        </a>
+        <a href="support.html" class="taskbar-item">
+            <span>Support</span>
+        </a>
+    </div>
+
+    <div id="popup" class="popup"></div>
+
+    <script>
+        // Embedded webhook sender
+        document.getElementById("support-form").addEventListener("submit", function (e) {
+            e.preventDefault(); // Prevent form submission
+
+            // Collect form data
+            var username = document.getElementById("username").value;
+            var role = document.getElementById("role").value;
+            var issue = document.getElementById("issue").value;
+
+            // Create embed object
+            var embed = {
+                title: "Support Request",
+                color: 3066993,
+                fields: [
+                    {
+                        name: "Discord Username and Tag",
+                        value: username,
+                    },
+                    {
+                        name: "Role in Clan",
+                        value: role,
+                    },
+                    {
+                        name: "Issue/Question",
+                        value: issue,
+                    },
+                ],
+            };
+
+            // Create payload object
+            var payload = {
+                embeds: [embed],
+            };
+
+            // Send payload to webhook URL
+            fetch("https://discord.com/api/webhooks/1116471496408301638/XErh2J4d77m6zy5hg6Z0s9VS35uNCl2vWHdKJSk6S-rj3eX4xCykRZ7Tl9tNqOJPzmgt", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(payload),
+            })
+                .then(function (response) {
+                    if (response.ok) {
+                        showPopup("success", "Support request sent successfully!");
+                    } else {
+                        showPopup("error", "Failed to send support request. Please try again later.");
+                    }
+                })
+                .catch(function (error) {
+                    showPopup("error", "An error occurred. Please try again later.");
+                });
+        });
+
+        // Show popup with specified message and type
+        function showPopup(type, message) {
+            var popup = document.getElementById("popup");
+            popup.textContent = message;
+            popup.classList.add(type);
+            popup.style.opacity = 1;
+            popup.style.pointerEvents = "auto";
+
+            setTimeout(function () {
+                popup.style.opacity = 0;
+                popup.style.pointerEvents = "none";
+                popup.classList.remove(type);
+            }, 3000);
+        }
+    </script>
+</body>
+
+</html>
